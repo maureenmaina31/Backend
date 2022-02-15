@@ -42,4 +42,4 @@ echo "Importing $2 into $1"
 
 echo "All done!!"
 
-
+./install.sh
