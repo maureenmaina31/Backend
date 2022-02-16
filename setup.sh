@@ -31,11 +31,7 @@ sudo -u postgres bash -c "psql -c \"mkdir project ;\""
 
 ./install.sh
 
-sudo apt-get install python3-pip 
-sudo pip3 install virtualenv virtualenv venv source venv/bin/activate 
-
-sudo apt update 
-sudo apt upgrade 
+sudo apt install python3-venv  
 
 sudo -u postgres psql -c"CREATE DATABASE mobalytics with owner 'mob_db_user';"
 
