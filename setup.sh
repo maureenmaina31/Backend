@@ -1,5 +1,4 @@
 #! /bin/sh
-PASS=dici
 
 gpg --keyserver keyserver.ubuntu.com --recv-key E084DAB9
 gpg -a --export E084DAB9 | sudo apt-key add -
@@ -20,7 +19,6 @@ sudo -u postgres psql
 sudo -i -u postgres psql ALTER USER postgres PASSWORD 'newpassword';
 
 psql -U postgres -h localhost 
-
 sudo su postgres
 
 sudo -i -u postgres psql -c "CREATE USER mob_db_user WITH PASSWORD ' mob_db_pass';"
@@ -32,3 +30,12 @@ sudo -u postgres bash -c "psql -c \"mkdir project ;\""
 
 
 ./install.sh
+
+sudo apt-get install python3-pip 
+sudo pip3 install virtualenv virtualenv venv source venv/bin/activate 
+
+sudo apt update 
+sudo apt upgrade 
+
+sudo -u postgres psql -c"CREATE DATABASE mobalytics with owner 'mob_db_user';"
+
